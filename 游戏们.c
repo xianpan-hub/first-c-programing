@@ -1,6 +1,6 @@
 #include"game.h"
 
-//´òÓ¡²Ëµ¥
+//æ‰“å°èœå•
 int Menu(int row)
 {
 	int i = 0;
@@ -9,41 +9,41 @@ int Menu(int row)
 		{printf("\n");
 		if (row - 8 == 3)
 		{
-			printf("                      Èı×ÓÆå                         \n");
+			printf("                      ä¸‰å­æ£‹                         \n");
 		}
 		else if (row - 8 == 15)
 		{
-			printf("                      Îå×ÓÆå                         \n");
+			printf("                      äº”å­æ£‹                         \n");
 		}
 		printf("*****************************************************\n");
-		printf("*******1.¿ªÊ¼ÓÎÏ·***************2.ÍË³öÓÎÏ·***********\n");
+		printf("*******1.å¼€å§‹æ¸¸æˆ***************2.é€€å‡ºæ¸¸æˆ***********\n");
 		printf("*****************************************************\n");
 		printf("\n");
-		printf("ÇëÑ¡Ôñ£º>");
+		printf("è¯·é€‰æ‹©ï¼š>");
 		
 		scanf("%d", &i);
 		while (getchar() != '\n');
 		if (i == 1)
 		{
 			system("cls");
-			printf("¿ªÊ¼ÓÎÏ·\n");
+			printf("å¼€å§‹æ¸¸æˆ\n");
 			return 1;
 		}
 		else if (i == 2)
 		{
-			printf("ÍË³öÓÎÏ·\n");
+			printf("é€€å‡ºæ¸¸æˆ\n");
 			return 0;
 		}
 		else
 		{
-			printf("ÎŞĞ§Ñ¡Ôñ\n");
+			printf("æ— æ•ˆé€‰æ‹©\n");
 			Sleep(2000);
 			system("cls");
 		}
 		} while (1);
 }
 
-//ÖØÖÃÆåÅÌ
+//é‡ç½®æ£‹ç›˜
 void Board_int(char board[ROW][COL], int row, int col, char set)
 {
 	for (int i = 0; i < row;i++)
@@ -55,7 +55,7 @@ void Board_int(char board[ROW][COL], int row, int col, char set)
 	}
 }
 
-//´òÓ¡ÆåÅÌ
+//æ‰“å°æ£‹ç›˜
 void Board_print(char board[ROW][COL], int row, int col)
 {
 	printf("\n");
@@ -113,40 +113,40 @@ void Board_print(char board[ROW][COL], int row, int col)
 	}
 }
 
-//ÅĞ¶ÏË­Ó®
+//åˆ¤æ–­è°èµ¢
 int Win_who(char board[ROW][COL], int row, int col,int i,int j,char set)
 {
 	int m = 0;
-	//ÅĞ¶ÏÎå×ÓÆå
+	//åˆ¤æ–­äº”å­æ£‹
 	if(row - 8 == 15)
 	{
 		m = 5;
 	}
-	//ÅĞ¶ÏÈı×ÓÆå
+	//åˆ¤æ–­ä¸‰å­æ£‹
 	else if (row - 8 == 3)
 	{
 		m = 3;
 	}
-	//±ê¼ÇÊÇ·ñÊ¤Àû£¬0Î´·ÖÊ¤¸º£¬ÆäËû·ÖÊ¤¸º¡®1¡¯Äã£¬¡®2¡¯µçÄÔ£¬¡® ¡¯Æ½¾Ö
+	//æ ‡è®°æ˜¯å¦èƒœåˆ©ï¼Œ0æœªåˆ†èƒœè´Ÿï¼Œå…¶ä»–åˆ†èƒœè´Ÿâ€˜1â€™ä½ ï¼Œâ€˜2â€™ç”µè„‘ï¼Œâ€˜ â€™å¹³å±€
 	int is = 0;
-	//±ê¼ÇÊÇ·ñÓĞ¿Õ¸ñ£¬0ÎªÎŞ£¬1ÎªÓĞ
+	//æ ‡è®°æ˜¯å¦æœ‰ç©ºæ ¼ï¼Œ0ä¸ºæ— ï¼Œ1ä¸ºæœ‰
 	int is_planket = 0;
-	//ÅĞ¶ÏĞĞ
+	//åˆ¤æ–­è¡Œ
 	is = Win(board, row, col, i, j, set,m,1);
 	if (is == 0)
-	//ÅĞ¶ÏÁĞ
+	//åˆ¤æ–­åˆ—
 	{
 		is = Win(board, row, col, i, j, set, m,2); 
 		if (is == 0)
-			//ÅĞ¶ÏÖ÷¶Ô½ÇÏß
+			//åˆ¤æ–­ä¸»å¯¹è§’çº¿
 		{
 			is = Win(board, row, col, i, j, set, m,3); 
-				//ÅĞ¶Ï¸±¶Ô½ÇÏß
+				//åˆ¤æ–­å‰¯å¯¹è§’çº¿
 			if (is == 0)
 			{
 				is = Win(board, row, col, i, j, set, m, 4); 
 				if (is == 0)
-					//ÅĞ¶ÏÆ½¾Ö
+					//åˆ¤æ–­å¹³å±€
 				{
 					for (int q = 4; q < row - 4; q++)
 					{
@@ -175,10 +175,10 @@ int Win_who(char board[ROW][COL], int row, int col,int i,int j,char set)
 	return is;
 }
 
-//ÅĞ¶ÏÓ®µÄ·Öº¯Êı
+//åˆ¤æ–­èµ¢çš„åˆ†å‡½æ•°
 int Win(char board[ROW][COL], int row, int col, int i, int j, char set,int m,int o)
 {
-	//Í¬É«Á¬ĞøÆå×ÓÊı
+	//åŒè‰²è¿ç»­æ£‹å­æ•°
     int l = 0;
 	int p = 0;
 	switch (o)
@@ -261,34 +261,34 @@ int Win(char board[ROW][COL], int row, int col, int i, int j, char set,int m,int
 	return p;
 }
 
-//Ô¤±¸ÏÂÆå
+//é¢„å¤‡ä¸‹æ£‹
 int Pre(char board[ROW][COL], int row, int col)
 {
 	int i = 0;
 	do
 	{
-	printf("1±íÊ¾ÄãÏÂµÄÆå×Ó£¬2±íÊ¾µçÄÔÏÂµÄÆå×Ó\n");
+	printf("1è¡¨ç¤ºä½ ä¸‹çš„æ£‹å­ï¼Œ2è¡¨ç¤ºç”µè„‘ä¸‹çš„æ£‹å­\n");
 	printf("\n");
 	printf("*****************************************************\n");
-	printf("***********1.ÏÈÊÖ*******************2.ºóÊÖ***********\n");
+	printf("***********1.å…ˆæ‰‹*******************2.åæ‰‹***********\n");
 	printf("*****************************************************\n");
 	printf("\n");
-	printf("ÇëÑ¡Ôñ£º>");
+	printf("è¯·é€‰æ‹©ï¼š>");
 	scanf("%d", &i);
 	while (getchar() != '\n');
 	if (i == 1)
 	{
-		printf("ÄãÏÈÊÖ\n");
+		printf("ä½ å…ˆæ‰‹\n");
 		break;
 	}
 	else if (i == 2)
 	{
-		printf("µçÄÔÏÈÊÖ\n");
+		printf("ç”µè„‘å…ˆæ‰‹\n");
 		break;
 	}
 	else
 	{
-		printf("ÎŞĞ§Ñ¡Ôñ\n");
+		printf("æ— æ•ˆé€‰æ‹©\n");
 		Sleep(2000);
 		system("cls");
 	}} while (1);
@@ -296,27 +296,27 @@ int Pre(char board[ROW][COL], int row, int col)
 	return i;
 }
 
-//ÄãÏÂ
+//ä½ ä¸‹
 int Play_you(char board[ROW][COL], int row, int col)
 {
 	int o = 0;
 	system("cls");
 	Board_print(board, row, col);
-	printf("µ½ÄãÏÂÁË,ÇëÊäÈëÈç¡°3£¬6¡±µÄ×ø±ê£º>");
+	printf("åˆ°ä½ ä¸‹äº†,è¯·è¾“å…¥å¦‚â€œ3ï¼Œ6â€çš„åæ ‡ï¼š>");
 	int i = 0;
 	int j = 0;
 	do
 	{	
-		scanf("%d£¬%d", &i, &j);
+		scanf("%dï¼Œ%d", &i, &j);
 
 		while (getchar() != '\n');
 		if (i > row-8 || i < 1 || j>col-8 || j < 1)
 		{
-			printf("×ø±ê·Ç·¨£¬ÇëÖØĞÂÊäÈëÈç¡°3£¬6¡±µÄ×ø±ê£º>");
+			printf("åæ ‡éæ³•ï¼Œè¯·é‡æ–°è¾“å…¥å¦‚â€œ3ï¼Œ6â€çš„åæ ‡ï¼š>");
 		}
 		else if (board[i+3][j+3] != ' ')
 		{
-			printf("¸Ã¸ñÒÑ±»Õ¼ÓÃ£¬ÇëÖØĞÂÊäÈëÈç¡°3£¬6¡±µÄ×ø±ê£º>");
+			printf("è¯¥æ ¼å·²è¢«å ç”¨ï¼Œè¯·é‡æ–°è¾“å…¥å¦‚â€œ3ï¼Œ6â€çš„åæ ‡ï¼š>");
 		}
 		else
 		{
@@ -334,11 +334,11 @@ int Play_you(char board[ROW][COL], int row, int col)
 	return o;
 }
 
-//µçÄÔÏÂ,Ëæ»ú
+//ç”µè„‘ä¸‹,éšæœº
 int Play_com_ra(char board[ROW][COL], int row, int col)
 {
 	system("cls");
-	printf("µ½µçÄÔÏÂÁË\n");
+	printf("åˆ°ç”µè„‘ä¸‹äº†\n");
 	int i = 0;
 	int j = 0;
 	do {
@@ -354,21 +354,21 @@ int Play_com_ra(char board[ROW][COL], int row, int col)
 	return Win_who(board, row, col, i, j, '2');
 }
 
-//´òÓ¡Ê¤¸º
+//æ‰“å°èƒœè´Ÿ
 void Print_end(char board[ROW][COL], int row, int col,int is)
 {
 	system("cls");
 	if (is == '1')
 	{
-		printf("ÄãÓ®ÁË£¡£¡£¡\n");
+		printf("ä½ èµ¢äº†ï¼ï¼ï¼\n");
 	}
 	else if (is == '2')
 	{
-		printf("µçÄÔÓ®ÁË£¡£¡£¡\n");
+		printf("ç”µè„‘èµ¢äº†ï¼ï¼ï¼\n");
 	}
 	else if(is==' ')
 	{
-		printf("Æ½¾Ö£¡£¡£¡\n");
+		printf("å¹³å±€ï¼ï¼ï¼\n");
 	}
 
 	Board_print(board, row, col);
@@ -376,16 +376,16 @@ void Print_end(char board[ROW][COL], int row, int col,int is)
 	system("cls");
 }
 
-//Ì°ĞÄ£¬×Ü
+//è´ªå¿ƒï¼Œæ€»
 int Greed_all(char board[ROW][COL], int row, int col,int i,int j)
 {
 	int m = 0;
-	//ÅĞ¶ÏÎå×ÓÆå
+	//åˆ¤æ–­äº”å­æ£‹
 	if (row - 8 == 15)
 	{
 		m = 5;
 	}
-	//ÅĞ¶ÏÈı×ÓÆå
+	//åˆ¤æ–­ä¸‰å­æ£‹
 	else if (row - 8 == 3)
 	{
 		m = 3;
@@ -401,19 +401,19 @@ int Greed_all(char board[ROW][COL], int row, int col,int i,int j)
 	return 0;
 }
 
-//Ì°ĞÄ£¬·Ö£¬Èı×ÓÆå
+//è´ªå¿ƒï¼Œåˆ†ï¼Œä¸‰å­æ£‹
 int Greed_a(char board[ROW][COL], int row, int col,  int i, int j,int m)
 {
-	//Ä£Äâ¶şÊ®Îå¹¬¸ñ£¬Í³¼ÆµÃ·Ö
+	//æ¨¡æ‹ŸäºŒåäº”å®«æ ¼ï¼Œç»Ÿè®¡å¾—åˆ†
 	int board_[(ROW-8)*2-1][(COL-8)*2-1] = {0};
-	//ÔÙÏÂÒ»×ÓÄÜÁ¬Èı/Á¬¶ş
+	//å†ä¸‹ä¸€å­èƒ½è¿ä¸‰/è¿äºŒ
 	for (int q = 0; q < 2*m-1; q++)
 	{
 		for (int w = 0; w < 2*m-1; w++)
-		{//Í¬É«Á¬ĞøÆå×ÓÊı
+		{//åŒè‰²è¿ç»­æ£‹å­æ•°
 			int l = 0;
 			int p = 0;
-			//¼ÙÉèÏÂÒ»×Ó
+			//å‡è®¾ä¸‹ä¸€å­
 			if (board[i - m + 1 + q][j - m + 1 + w] == ' '&& i - m + 1 + q>=4&& i - m + 1 + q<=6
 				&& j- m + 1 + w >= 4 && j - m + 1 + w <= 6)	
 			{
@@ -549,18 +549,18 @@ int Greed_a(char board[ROW][COL], int row, int col,  int i, int j,int m)
 	return Win_who(board, row, col, q_max + i - m + 1, w_max + j - m + 1, '2');
 }
 
-//Ì°ĞÄ£¬·Ö£¬Îå×ÓÆå
+//è´ªå¿ƒï¼Œåˆ†ï¼Œäº”å­æ£‹
 int Greed_b(char board[ROW][COL], int row, int col, int i, int j, int m)
 {
-	//Ä£Äâ°ËÊ®Ò»¹¬¸ñ£¬Í³¼ÆµÃ·Ö
+	//æ¨¡æ‹Ÿå…«åä¸€å®«æ ¼ï¼Œç»Ÿè®¡å¾—åˆ†
 	int board_[9][9] = { 0 };
 	for (int q = 0; q < 2 * m - 1; q++)
 	{
 		for (int w = 0; w < 2 * m - 1; w++)
 		{
-			//·ÖÊı
+			//åˆ†æ•°
 			int p = 0;
-			//¼ÙÉè¸÷ÏÂÒ»×Ó
+			//å‡è®¾å„ä¸‹ä¸€å­
 			if (board[i - m + 1 + q][j - m + 1 + w] == ' ' && i - m + 1 + q >= 4 && i - m + 1 + q <= 18
 				&& j - m + 1 + w >= 4 && j - m + 1 + w <= 18)
 			{	
@@ -600,7 +600,7 @@ int Greed_b(char board[ROW][COL], int row, int col, int i, int j, int m)
 		}
 	
 	}		
-	printf("µ½µçÄÔÏÂÁË\n");
+	printf("åˆ°ç”µè„‘ä¸‹äº†\n");
 		Sleep(2000);
 	if (board[i - m + 1 + q_max][j - m + 1 + w_max] == ' ' && i - m + 1 + q_max >= 4 && i - m + 1 + q_max <= 18
 		&& j - m + 1 + w_max >= 4 && j - m + 1 + w_max <= 18)
@@ -614,14 +614,14 @@ int Greed_b(char board[ROW][COL], int row, int col, int i, int j, int m)
 	return Win_who(board, row, col, q_max + i - m + 1, w_max + j - m + 1, '2');
 }
 
-//Ì°ĞÄ£¬Îå×ÓÆå£¬·Ö·½Ïò
-//Á¬ËÄ£¬Á¬Îå
+//è´ªå¿ƒï¼Œäº”å­æ£‹ï¼Œåˆ†æ–¹å‘
+//è¿å››ï¼Œè¿äº”
 int Greed(char board[ROW][COL], int a, int b,char set,int c)
 {
-	//·ÖÊı
+	//åˆ†æ•°
 	int p = 0;
 	int e, d = 0;
-	//¼ÇÂ¼£¬1Îª±¾·½£¬0Îª¿Õ¸ñ£¬-1ÎªµĞ·½
+	//è®°å½•ï¼Œ1ä¸ºæœ¬æ–¹ï¼Œ0ä¸ºç©ºæ ¼ï¼Œ-1ä¸ºæ•Œæ–¹
 		int cheek[9] = { 0 };
 		for (int i = a, k = a + 8, j = b; i < a + 9; i++, j++, k--)
 		{
@@ -654,14 +654,14 @@ int Greed(char board[ROW][COL], int a, int b,char set,int c)
 				}
 				if (i - a >= 5)
 				{
-					//»îËÄ£¬¡®¡¯±íÊ¾ÔÚÕâÅĞ¶Ï
-					//01111'0'£¬
+					//æ´»å››ï¼Œâ€˜â€™è¡¨ç¤ºåœ¨è¿™åˆ¤æ–­
+					//01111'0'ï¼Œ
 					if (cheek[i - a - 5] == 0 && cheek[i - a - 4] == 1 && cheek[i - a - 3] == 1 && cheek[i - a - 2] == 1 && cheek[i - a - 1] == 1 && cheek[i - a] == 0)
 					{
 						p += 10000;
 					}
 					else if (
-						//Á¬ËÄ
+						//è¿å››
 						//-1111'1'0
 						(cheek[i - a - 5] == -1 && cheek[i - a - 4] == 1 && cheek[i - a - 3] == 1 && cheek[i - a - 2] == 1 && cheek[i - a - 1] == 1 && cheek[i - a] == 0)
 						//0111'1'-1
@@ -670,15 +670,15 @@ int Greed(char board[ROW][COL], int a, int b,char set,int c)
 					{
 						p += 1000;
 					}
-					//»îÈı£¬	
+					//æ´»ä¸‰ï¼Œ	
 					else if (
 						//01110'0'
 						(cheek[i - a - 5] == 0 && cheek[i - a - 4] == 1 && cheek[i - a - 3] == 1 && cheek[i - a - 2] == 1 && cheek[i - a - 1] == 0 && cheek[i - a] == 0)
-						//»ò00111'0'
+						//æˆ–00111'0'
 						|| (cheek[i - a - 5] == 0 && cheek[i - a - 4] == 0 && cheek[i - a - 3] == 1 && cheek[i - a - 2] == 1 && cheek[i - a - 1] == 1 && cheek[i - a] == 0)
-						//»ò01101'0'
+						//æˆ–01101'0'
 						|| (cheek[i - a - 5] == 0 && cheek[i - a - 4] == 1 && cheek[i - a - 3] == 1 && cheek[i - a - 2] == 0 && cheek[i - a - 1] == 1 && cheek[i - a] == 0)
-						//»ò01011'0'
+						//æˆ–01011'0'
 						|| (cheek[i - a - 5] == 0 && cheek[i - a - 4] == 1 && cheek[i - a - 3] == 0 && cheek[i - a - 2] == 1 && cheek[i - a - 1] == 1 && cheek[i - a] == 0)
 						)
 					{
@@ -687,13 +687,13 @@ int Greed(char board[ROW][COL], int a, int b,char set,int c)
 				}
 				if (i - a >= 4)
 				{
-					//Á¬Îå£¬1111'1'£¬
+					//è¿äº”ï¼Œ1111'1'ï¼Œ
 					if (cheek[i - a - 4] == 1 && cheek[i - a - 3] == 1 && cheek[i - a - 2] == 1 && cheek[i - a - 1] == 1 && cheek[i - a] == 1)
 					{
 						p += 100000;
 					}
 					if (
-						//Á¬ËÄ
+						//è¿å››
 						//1110'1'
 						(cheek[i - a - 4] == 1 && cheek[i - a - 3] == 1 && cheek[i - a - 2] == 1 && cheek[i - a - 1] == 0 && cheek[i - a] == 1)
 						//1011'1'
@@ -707,11 +707,11 @@ int Greed(char board[ROW][COL], int a, int b,char set,int c)
 				}
 				if (i - a >= 3)
 				{
-					//»î¶ş
+					//æ´»äºŒ
 					if (
-						//£¡11'1'
+						//ï¼11'1'
 						(cheek[i - a - 2] == 1 && cheek[i - a - 1] == 1 && cheek[i - a] != 1)
-						//11'£¡1'
+						//11'ï¼1'
 						|| (cheek[i - a - 2] != 1 && cheek[i - a - 1] == 1 && cheek[i - a] == 1)
 						)
 					{
@@ -720,7 +720,7 @@ int Greed(char board[ROW][COL], int a, int b,char set,int c)
 				}
 				if (i - a >= 2)
 				{
-					//Á¬¶ş
+					//è¿äºŒ
 					if (
 						//-11'1'
 						(cheek[i - a - 2] == 1 && cheek[i - a - 1] == 1 && cheek[i - a] != 1)
