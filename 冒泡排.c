@@ -1,0 +1,11 @@
+//#include"ar.h"
+//int main()
+//{
+//	int arr[5] = {0};
+//	int size = sizeof(arr) / sizeof(arr[0]);
+//	SC(arr, size);
+//	PR(arr, size);
+//	OR_NO(arr, size);
+//	PR(arr, size);
+//	return 0;
+//}
