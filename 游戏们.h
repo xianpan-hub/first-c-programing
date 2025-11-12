@@ -2,7 +2,7 @@
 #ifndef _GAME_H_
 #define _GAME_H_
 #define _CRT_SECURE_NO_WARNINGS
-//11ÎªÈı×ÓÆå£¬23ÎªÎå×ÓÆå
+//11ä¸ºä¸‰å­æ£‹ï¼Œ23ä¸ºäº”å­æ£‹
 #define ROW 23
 #define COL 23
 
@@ -12,7 +12,7 @@
 #include<time.h>
 #include<math.h>
 
-//2.Îå×ÓÆå
+//2.äº”å­æ£‹
 int Menu(int row);
 void Board_int(char board[ROW][COL], int row, int col,char set);
 void Board_print(char board[ROW][COL], int row, int col);
@@ -22,7 +22,7 @@ int Pre(char board[ROW][COL], int row, int col);
 int Play_you(char board[ROW][COL], int row, int col);
 int Play_com_ra(char board[ROW][COL], int row, int col);
 void Print_end(char board[ROW][COL], int row, int col,int is);
-//Ì°ĞÄ£¬Ò»²½£¬¼òµ¥Ä£ĞÍ£¬ÉÙÁ¿Îó²î
+//è´ªå¿ƒï¼Œä¸€æ­¥ï¼Œç®€å•æ¨¡å‹ï¼Œå°‘é‡è¯¯å·®
 int Greed_all (char board[ROW][COL], int row, int col, int i, int j);
 int Greed_a(char board[ROW][COL], int row, int col, int i, int j,int m);
 int Greed_b(char board[ROW][COL], int row, int col, int i, int j, int m);
