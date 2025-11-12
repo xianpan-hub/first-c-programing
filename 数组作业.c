@@ -116,7 +116,7 @@
 //					}
 //					if (k == a - 1)
 //					{
-//						printf("元素%d位于(%d,%d)是鞍点\n", temp, x, y);
+//						printf("鍏冪礌%d浣嶄簬(%d,%d)鏄瀺鐐筡n", temp, x, y);
 //						o = 1;
 //					}
 //				}
@@ -125,7 +125,7 @@
 //	}	
 //	if (o == 0)
 //		{
-//			printf("没有鞍点\n");
+//			printf("娌℃湁闉嶇偣\n");
 //		}
 //		return 0;
 //}
@@ -136,4 +136,5 @@ int main()
 	float a = 5 / 2.0;
 	printf("%f", a);
 	return 0;
+
 }
